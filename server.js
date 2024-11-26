@@ -1,5 +1,5 @@
 import express from "express";
-import routes from "./src/Routes/postsRoutes.js";
+import routes from "./src/routes/postsRoutes.js";
 
 const app = express(); // Cria uma instância do servidor Express
 app.use(express.static("uploads"))
