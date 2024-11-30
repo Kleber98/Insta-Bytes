@@ -3,7 +3,7 @@ import multer from "multer"; // Importa o módulo Multer para upload de arquivos
 import { listarPosts, postarNovoPost, uploadImagem, atualizarNovoPost } from "../controllers/postController.js";// Importa funções controladoras de posts do arquivo postController.js
 import cors from "cors";
 
-const corsOption ={
+const corsOptions ={
   origin: "http://localhost:8000",
   optionsSuccessStatus: 200
 }
@@ -26,7 +26,7 @@ const upload = multer({dest:"./uploads", storage}); // Cria uma instância do mi
 const routes = (app) => {
   // Habilita o middleware para analisar dados JSON enviados no corpo da requisição
   app.use(express.json());
-  app.use(cors(corsOption))
+  app.use(cors(corsOptions))
 
   // Rota GET para listar todos os posts (mapeia a função listarPosts)
   app.get("/posts", listarPosts);
